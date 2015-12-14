@@ -1,0 +1,28 @@
+{
+  "name": "mme_hss",
+  "version": "1.0.0",
+  "description": "lte hss",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matus123/mme_hss.git"
+  },
+  "keywords": [
+    "lte",
+    "hss",
+    "mme",
+    "diameter"
+  ],
+  "author": "matus kislan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/matus123/mme_hss/issues"
+  },
+  "homepage": "https://github.com/matus123/mme_hss#readme",
+  "dependencies": {
+    "diameter": "^0.6.3"
+  }
+}
