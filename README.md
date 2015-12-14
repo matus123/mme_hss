@@ -1,2 +1,2 @@
-# mme_hss
-lte, mme, hss, diameter
+# MME <-> HSS
+S6a/S6d diameter HSS server
