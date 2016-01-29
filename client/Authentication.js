@@ -26,7 +26,7 @@ const socket = diameter.createConnection(options, function() {
     [ 'Origin-Realm', 'mmeOriginRealm.com' ],
     [ 'Destination-Realm', 'HSS.REALM' ],
     [ 'User-Name', '262010986726546' ],
-    [ 'Visited-PLMN-Id', '132010' ],
+    [ 'Visited-PLMN-Id', new Buffer('132010', 'hex').toString() ],
     [ 'Destination-Host', 'HSS.HOST' ],
     [ 'Supported-Features', [
       [ 'Feature-List-ID', 1],

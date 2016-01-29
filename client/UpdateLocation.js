@@ -27,7 +27,7 @@ const socket = diameter.createConnection(options, function() {
     [ 'User-Name', '262010986726546' ],
     [ 'RAT-Type', 'EUTRAN', 10415 ],
     [ 'ULR-Flags', 98 ],
-    [ 'Visited-PLMN-Id', '132010' ],
+    [ 'Visited-PLMN-Id', new Buffer('132010', 'hex') ],
     [ 'Destination-Host', 'HSS.HOST' ],
     [ 'Supported-Features', [
       [ 'Feature-List-ID', 1],
