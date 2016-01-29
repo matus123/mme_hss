@@ -12,10 +12,6 @@ const options = {
   host: HOST
 };
 
-/*
-628 - Supported-Features /missing in dictionary.json
-*/
-
 const socket = diameter.createConnection(options, function() {
   let session = socket.diameterSession;
   let request = session.createRequest('3GPP S6a/S6d', '3GPP-Authentication-Information');
@@ -32,7 +28,10 @@ const socket = diameter.createConnection(options, function() {
     [ 'User-Name', '262010986726546' ],
     [ 'Visited-PLMN-Id', '132010' ],
     [ 'Destination-Host', 'HSS.HOST' ],
-    //[ 'Supported-Features', ],
+    [ 'Supported-Features', [
+      [ 'Feature-List-ID', 1],
+      [ 'Feature-List', 201327167]
+    ]],
     [ 'Requested-EUTRAN-Authentication-Info', [
       [ 'Number-Of-Requested-Vectors', 1]
     ]]

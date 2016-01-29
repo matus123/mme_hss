@@ -33,22 +33,25 @@ const socket = diameter.createConnection(options, function() {
     [ 'Destination-Realm', 'HSS.REALM' ],
     [ 'User-Name', '262010986726546' ],
     [ 'Destination-Host', 'HSS.HOST' ],
-    //[ 'Supported-Features', ],
+    [ 'Supported-Features', [
+      [ 'Feature-List-ID', 1],
+      [ 'Feature-List', 201327167]
+    ]],
     [ 'Homogeneous-Support-of-IMS-Voice-Over-PS-Sessions', 'NOT_SUPPORTED' ],
     [ 'NOR-Flags', 128 ],
     [ 'Context-Identifier', 1 ],
-    //[ 493, 'www.test0.com' ],
+    [ 'Service-Selection', 'www.test0.com' ],
     [ 'Terminal-Information', [
       [ 'Software-Version', '02' ],
       [ 'IMEI', '12345670901231' ]
     ]],
-    // [ 486, [
-    //   [ 'MIP-Home-Agent-Host', [
-    //     [ 'Destination-Host', 'netowl-pgw00.nodes.epc.mnc012.mcc310.3gppnetwork.org' ],
-    //     [ 'Destination-Realm', 'epc.mnc012.mcc310.3gppnetwork.org' ]
-    //   ]]
-    // ]],
-    //[ 'Visited-Network-Identifier', 'mnc012.mcc310.3gppnetwork.org' ]
+    [ 'MIP6-Agent-Info', [
+      [ 'MIP-Home-Agent-Host', [
+        [ 'Destination-Host', 'netowl-pgw00.nodes.epc.mnc012.mcc310.3gppnetwork.org' ],
+        [ 'Destination-Realm', 'epc.mnc012.mcc310.3gppnetwork.org' ]
+      ]]
+    ]],
+    [ 'Visited-Network-Identifier', 'mnc012.mcc310.3gppnetwork.org' ]
   ]);
   console.log('request=>',request);
   session.sendRequest(request).then(function(response) {

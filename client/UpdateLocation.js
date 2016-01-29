@@ -25,11 +25,14 @@ const socket = diameter.createConnection(options, function() {
     [ 'Origin-Realm', 'mmeOriginRealm.com' ],
     [ 'Destination-Realm', 'HSS.REALM' ],
     [ 'User-Name', '262010986726546' ],
-    [ 'RAT-Type', 'EUTRAN' ],
+    [ 'RAT-Type', 'EUTRAN', 10415 ],
     [ 'ULR-Flags', 98 ],
     [ 'Visited-PLMN-Id', '132010' ],
     [ 'Destination-Host', 'HSS.HOST' ],
-    //[ 'Supported-Features', ],
+    [ 'Supported-Features', [
+      [ 'Feature-List-ID', 1],
+      [ 'Feature-List', 201327167]
+    ]],
     [ 'Terminal-Information', [
       [ 'Software-Version', '02' ],
       [ 'IMEI', '12345670901231' ]
