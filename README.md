@@ -14,12 +14,6 @@ git clone https://github.com/matus123/mme_hss.git
 cd ./mme_hss
 npm install
 ```
-- replace diameter library with modified
-```
-git clone https://github.com/matus123/node-diameter.git
-rm -r node_modules/diameter
-mv node-diameter ./node_modules/diameter
-```
 
 Start:
 -------
