@@ -12,7 +12,6 @@ const options = {
 
 const server = diameter.createServer(options, function(socket) {
   socket.on('diameterMessage', function(request) {
-    console.log(request);
     if(handlers.handleExists(request)) {
         handlers.handle(request);
     }

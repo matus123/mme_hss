@@ -20,6 +20,7 @@ const handlers = {
 			]]
 		]);
 		event.callback(event.response);
+		return event.response;
 	},
 
 	'3GPP-Notify': function (event) {
@@ -30,6 +31,7 @@ const handlers = {
 			[ 'Origin-Realm', 'HSS.REALM']
 		]);
 		event.callback(event.response);
+		return event.response;
 	},
 
 	'3GPP-Update-Location': function (event) {
@@ -52,6 +54,7 @@ const handlers = {
 			]]
 		]);
 		event.callback(event.response);
+		return event.response;
 	},
 
 	'Device-Watchdog': function (event) {
@@ -61,15 +64,16 @@ const handlers = {
 			[ 'Origin-Realm', 'HSS.REALM']
 		]);
 		event.callback(event.response);
+		return event.response;
 	}
 }
 
 module.exports.handle = function (request) {
 	const id = counter;
 	counter++;
-	logger.info({logID:id}, request.message);
-	return handlers[request.message.command](request);
-	logger.info({logID:id}, request.response);
+	logger.info({logID:id, type: 'Request'}, request.message);
+	const response = handlers[request.message.command](request);
+	logger.info({logID:id, type: 'Response'}, response);
 };
 
 module.exports.handleExists = function (request) {
