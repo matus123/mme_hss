@@ -2,8 +2,8 @@
 
 const diameter = require('diameter');
 
-const HOST = '127.0.0.1';
-const PORT = 3868;
+const HOST = process.env.HOST || '127.0.0.1';
+const PORT = process.env.PORT || 3868;
 
 const options = {
   beforeAnyMessage: diameter.logMessage,
