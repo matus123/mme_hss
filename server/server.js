@@ -2,6 +2,8 @@
 const diameter = require('diameter');
 const handlers = require('./handlers');
 
+const logger = require('../logger');
+
 
 const options = {
     beforeAnyMessage: diameter.logMessage,
@@ -10,11 +12,12 @@ const options = {
 
 const server = diameter.createServer(options, function(socket) {
   socket.on('diameterMessage', function(request) {
+    console.log(request);
     if(handlers.handleExists(request)) {
         handlers.handle(request);
     }
     else {
-        console.log('Not implemented', request);
+        logger.warn('Not implemented', request);
     }
     // if (event.message.command === 'Capabilities-Exchange') {
     //   event.response.body = event.response.body.concat([

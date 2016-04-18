@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "debug": "./node_modules/node-inspector/bin/node-debug.js server.js",
-		"start": "node server.js" 
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/matus123/mme_hss#readme",
   "dependencies": {
-    "diameter": "git+https://github.com/matus123/node-diameter"
+    "diameter": "git+https://github.com/matus123/node-diameter",
+    "winston": "^2.2.0"
   },
   "devDependencies": {
     "node-inspector": "^0.12.5"

@@ -1,3 +1,7 @@
+'use strict';
+
+const logger = require('../logger');
+let counter = 0;
 
 const handlers = {
 	'3GPP-Authentication-Information': function (event) {
@@ -61,7 +65,11 @@ const handlers = {
 }
 
 module.exports.handle = function (request) {
+	const id = counter;
+	counter++;
+	logger.info({logID:id}, request.message);
 	return handlers[request.message.command](request);
+	logger.info({logID:id}, request.response);
 };
 
 module.exports.handleExists = function (request) {
