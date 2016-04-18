@@ -30,14 +30,22 @@ const handlers = {
 
 	'3GPP-Update-Location': function (event) {
 		event.response.body = event.response.body.concat([
-			[ 'Result-Code', 'DIAMETER_SUCCESS'],
-			[ 'Auth-Session-State', 'NO_STATE_MAINTAINED' ],
-			[ 'Origin-Host', 'HSS.HOST'],
-			[ 'Origin-Realm', 'HSS.REALM'],
-			[ 'ULA-Flags', 1]
-			// [ 'Subscription-Data', [
-			// 	[]
-			// ]]
+            [ 'Result-Code', 'DIAMETER_SUCCESS'],
+            [ 'Auth-Session-State', 'NO_STATE_MAINTAINED' ],
+            [ 'Origin-Host', 'HSS.HOST'],
+            [ 'Origin-Realm', 'HSS.REALM'],
+            [ 'ULA-Flags', 1],
+            [ 'Subscription-Data', [
+                ['Subscriber-Status', 0]
+                // ['MSISDN', new Buffer('03792900f3', 'hex')],
+                // ['STN-SR', new Buffer('6103792900f0', 'hex')],
+                // ['Network-Access-Mode(1417)', 'PACKET_AND_CIRCUIT (0)'],
+                // ['Access-Restriction-Data(1426)', '0'],
+                // ['APN-OI-Replacement(1427)', 'mnc012.mcc310.gprs'],
+                // ['3GPP-Charging-Characteristics', 13],
+                // ['AMBR', 1435],
+                // ['APN-Configuration-Profile', 1429]
+			]]
 		]);
 		event.callback(event.response);
 	},
