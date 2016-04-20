@@ -6,8 +6,8 @@ const logger = require('../logger');
 
 
 const options = {
-    beforeAnyMessage: diameter.logMessage,
-    afterAnyMessage: diameter.logMessage,
+    // beforeAnyMessage: diameter.logMessage,
+    // afterAnyMessage: diameter.logMessage,
 };
 
 const server = diameter.createServer(options, function(socket) {
@@ -72,10 +72,10 @@ const server = diameter.createServer(options, function(socket) {
   });
     
     socket.on('end', function() {
-        console.log('Client ' + socket.diameterSession.sessionId + ' disconnected.');
+        logger.info('Client ' + socket.diameterSession.sessionId + ' disconnected.');
     });
     socket.on('error', function(err) {
-        console.log(err);
+        logger.error(err);
     });
 });
 
