@@ -8,4 +8,4 @@ const PORT = process.env.PORT || 3868;
 
 server.listen(PORT, HOST);
 
-console.log('Started DIAMETER server on ' + HOST + ':' + PORT);
+logger.info('Started DIAMETER server on ' + HOST + ':' + PORT);
